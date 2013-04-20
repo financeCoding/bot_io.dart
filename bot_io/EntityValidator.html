@@ -46,7 +46,7 @@ abstract class EntityValidator {
    assert(targetSha != null);
    assert(targetSha.length == 40);
 
-   var future = _getSha1String(entity)
+   var future = fileSha1Hex(entity)
        .then((String sha1) {
          if(sha1 == targetSha) {
            return [];
@@ -131,7 +131,7 @@ static Stream&lt;String&gt; validateFileContentSha(File entity, String targetSha
  assert(targetSha != null);
  assert(targetSha.length == 40);
 
- var future = _getSha1String(entity)
+ var future = fileSha1Hex(entity)
      .then((String sha1) {
        if(sha1 == targetSha) {
          return [];
